@@ -10,6 +10,12 @@
 :root{
   --first-color: #4070F4;
   --second-color: #0E2431;
+  --baseBackground: white;
+  --switchSpinner: white;
+  --baseColor: #1d2029;
+  --fontColor: #282943;
+  --navBar: white;
+  --footer: #0E2431;
 }
 
 /*===== Fuente y tipografia =====*/
@@ -44,7 +50,14 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
-
+.dark-mode{
+  --baseBackground: #1d2029;
+  --switchSpinner: #282943;
+  --baseColor: white;
+  --fontColor: white;
+  --navBar: #1d2029;
+  --footer: #1d2029;
+}
 /*===== BASE =====*/
 *,::before,::after{
   box-sizing: border-box;
@@ -56,7 +69,8 @@ body{
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  background: var(--baseBackground);
+  color: var(--fontColor);
 }
 h1,h2,p{
   margin: 0;
@@ -116,7 +130,7 @@ img{
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
+  background-color: var(--baseBackground);
   box-shadow: 0 1px 4px rgba(146,161,176,.15);
 }
 
@@ -128,7 +142,7 @@ img{
   align-items: center;
   font-weight: var(--font-semi);
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 768px){
   .nav__menu{
     position: fixed;
     top: var(--header-height);
@@ -136,7 +150,7 @@ img{
     width: 80%;
     height: 100%;
     padding: 2rem;
-    background-color: var(--second-color);
+    background-color: var(--fontColor);
     transition: .5s;
   }
 }
@@ -145,8 +159,7 @@ img{
 }
 .nav__link{
   position: relative;
-  color: #fff;
-  text-decoration: none !important;
+  color: var(--navBar);
 }
 .nav__link:hover{
   position: relative;
@@ -161,13 +174,43 @@ img{
   background-color: var(--first-color);
 }
 .nav__logo{
-  color: var(--second-color);
+  color: var(--fontColor);
 }
 .nav__toggle{
   color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
+/*SWITCH*/
+.checkbox {
+  display: none;
+}
+.checkbox:checked ~ .switch:before{
+  transform: translateX(30px);
+}
+.switch {
+  height: 30px;
+  display: block;
+  border-radius: 20px;
+  background: #4070F4;
+  width: 60px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+}
+.switch::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transform: translateX(0);
+  transition: .3s;
+  will-change: transform;
+}
+
 
 /*Active menu*/
 .active::after{
@@ -208,7 +251,7 @@ img{
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: var(--second-color);
+  color: var(--fontColor);
 }
 .home__social-icon:hover{
   color: var(--first-color);
@@ -217,11 +260,9 @@ img{
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 250px;
+  width: 295px;
 }
-.circular__img{
-  border-radius: 50%;
-}
+
 /*BUTTONS*/
 .button{
   display: inline-block;
@@ -249,6 +290,10 @@ img{
 .about__img img{
   width: 200px;
   border-radius: .5rem;
+}
+.circular__img{
+  padding-right: 100px;
+  border-radius: 50%;
 }
 
 /* ===== SKILLS =====*/
@@ -316,6 +361,7 @@ img{
   border-radius: .5rem;
 }
 
+
 /* ===== WORK =====*/
 .work__container{
   row-gap: 2rem;
@@ -338,9 +384,14 @@ img{
   width: 100%;
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
-  padding: 1rem;
-  border-radius: .5rem;
-  border: 1.5px solid var(--second-color);
+  padding: 10px;
+  border-radius: 3px;
+  background-color: var(--baseBackground);
+  color: var(--fontColor);
+  border-top: 0 ;
+  border-left: 0 ;
+  border-right: 0;
+  border-bottom: 1.5px solid var(--fontColor);
   outline: none;
   margin-bottom: var(--mb-4);
 }
@@ -355,7 +406,7 @@ img{
 
 /* ===== FOOTER =====*/
 .footer{
-  background-color: var(--second-color);
+  background-color: var(--footer);
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);
@@ -370,12 +421,12 @@ img{
 }
 .footer__icon{
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--fontColor);
   margin: 0 var(--mb-2)
 }
 
 /* ===== MEDIA QUERIES=====*/
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 768px){
   body{
     margin: 0;
   }
@@ -406,8 +457,7 @@ img{
     display: none;
   }
   .nav__link{
-    text-decoration: none !important;
-    color: var(--second-color);
+    color: var(--fontColor);
   }
 
   .home{
@@ -452,7 +502,7 @@ img{
   }
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1024px){
   .bd-grid{
     margin-left: auto;
     margin-right: auto;

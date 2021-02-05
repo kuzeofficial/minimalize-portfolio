@@ -6,43 +6,15 @@ import  Alert  from "@material-ui/lab/Alert";
 import SendIcon from "@material-ui/icons/Send";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import "../styles/styles.css"
 function hide(){
     document.getElementById('alerta').style.display = 'none';
-    }
-const useStyles = makeStyles((theme) => ({
-    button: {
-      marginTop: "1rem",
-      color: "#4070F4",
-      borderColor: "#4070F4",
-    },
-  }));
-const InputField = withStyles({
-    root: {
-      "& label.Mui-focused": {
-        color: "#4070F4",
-      },
-      "& label": {
-        color: "#0E2431",
-      },
-      "& .MuiOutlinedInput-root": {
-        "& fieldset": {
-          borderColor: "#0E2431",
-        },
-        "&:hover fieldset": {
-          borderColor: "#0E2431",
-        },
-        "&.Mui-focused fieldset": {
-          borderColor: "#0E2431",
-        },
-      },
-    },
-})(TextField);
+}
   
 export const Contact = () => {
     useEffect(() => {
       Aos.init({ duration: 2000 });
     });
-    const classes = useStyles();
 
     const frmContact = { userEmail:'', userName:'', emailTitle:'', emailDetails:'' };
     const [contact,setContact] = useState(frmContact);
@@ -67,66 +39,13 @@ export const Contact = () => {
       <section className="contact section" id="contact">
         { showMessage ? <Alert id="alerta" className="col-md-5 mx-auto" variant="filled" onClose={() => {hide()}}severity="success">Email Send Success!!</Alert> : ''}
         <h2 className="section-title">Contact</h2>
-        <div className="contact__container bd-grid">
-          <form className={classes.form} onSubmit={handleSubmit}>
-            <InputField data-aos="fade-down" data-aos-delay="200"
-            type="text" 
-            fullWidth={true} 
-            label="Email Address" 
-            variant="outlined" 
-            margin="dense" 
-            size="medium" 
-            value={contact.userEmail} 
-            name="userEmail" 
-            onChange={handleChange} 
-            inputProps={{ style: { color: "black" } }}
-            />
-            <InputField data-aos="fade-down" data-aos-delay="400"
-            type="text" 
-            fullWidth={true} 
-            label="Name" 
-            variant="outlined" 
-            margin="dense" 
-            size="medium" 
-            value={contact.userName} 
-            name="userName" 
-            onChange={handleChange} 
-            inputProps={{ style: { color: "black" } }}
-            />
-            <InputField data-aos="fade-down" data-aos-delay="600"
-            type="text" 
-            fullWidth={true} 
-            label="Title" 
-            variant="outlined" 
-            margin="dense" 
-            size="medium" 
-            value={contact.emailTitle} 
-            name="emailTitle" 
-            onChange={handleChange} 
-            inputProps={{ style: { color: "black" } }}
-            />
-            <InputField data-aos="fade-down" data-aos-delay="800"
-            type="textarea" 
-            fullWidth={true} 
-            label="Proposal" 
-            variant="outlined" 
-            margin="dense" 
-            size="medium" 
-            value={contact.emailDetails} 
-            name="emailDetails" 
-            onChange={handleChange} 
-            inputProps={{ style: { color: "black" } }}
-            />
+        <div class="contact__container bd-grid">
+          <form action="" class="contact__form">
+            <input placeholder="Email Address" data-aos="fade-down" data-aos-delay="200" label="Email Address" type="mail" value={contact.userEmail} name="userEmail" onChange={handleChange} class="contact__input"></input>
+            <input placeholder="Name" data-aos="fade-down" data-aos-delay="400" label="Name" value={contact.userName} name="userName" onChange={handleChange}  type="text"  class="contact__input"></input>
+            <textarea placeholder="Describe your proposal" data-aos="fade-down" data-aos-delay="600" name="emailDetails" value={contact.emailDetails} onChange={handleChange} cols="0" rows="10" class="contact__input"></textarea>
             <br />
-            <Button
-            type="submit"
-            className={classes.button}
-            variant="outlined"
-            fullWidth={true}
-            endIcon={<SendIcon />}
-            >
-            contact me
-            </Button>
+            <input type="submit" value="Send" class="contact__button button"/>
           </form>
         </div>
       </section>

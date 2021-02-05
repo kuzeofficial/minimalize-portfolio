@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import "../styles/styles.css"
 import 'boxicons'
-
+import Switch from "./switch"
 
 const Header = () => {
     //MENU HAMBURGUESA
@@ -33,11 +33,12 @@ const Header = () => {
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li className="nav__item"><Switch/></li>
                     </ul>
                 </div>
 
                 <div class="nav__toggle" id="nav-toggle">
-                    <box-icon ata-target="#nav-smenu" aria-controls="nav-menu" name='menu' color='#0e2431' onClick={handleNavCollapse} aria-expanded={!isNavCollapsed ? false : false}  />
+                    <box-icon className="icon" ata-target="#nav-smenu" aria-controls="nav-menu" name='menu'  onClick={handleNavCollapse} aria-expanded={!isNavCollapsed ? false : false}  />
                 </div>
             </nav>
         </header>
