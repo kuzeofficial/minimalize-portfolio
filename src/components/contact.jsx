@@ -1,9 +1,6 @@
 import React, {useState, useEffect } from 'react'
 import emailjs from 'emailjs-com';
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { TextField, Button} from "@material-ui/core";
 import  Alert  from "@material-ui/lab/Alert";
-import SendIcon from "@material-ui/icons/Send";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "../styles/styles.css"
@@ -37,15 +34,15 @@ export const Contact = () => {
     return (
       
       <section className="contact section" id="contact">
-        { showMessage ? <Alert id="alerta" className="col-md-5 mx-auto" variant="filled" onClose={() => {hide()}}severity="success">Email Send Success!!</Alert> : ''}
+        { showMessage ? <Alert id="alerta" variant="filled" onClose={() => {hide()}}severity="success">Contact Success!!</Alert> : ''}
         <h2 className="section-title">Contact</h2>
-        <div class="contact__container bd-grid">
-          <form action="" class="contact__form">
-            <input placeholder="Email Address" data-aos="fade-down" data-aos-delay="200" label="Email Address" type="mail" value={contact.userEmail} name="userEmail" onChange={handleChange} class="contact__input"></input>
-            <input placeholder="Name" data-aos="fade-down" data-aos-delay="400" label="Name" value={contact.userName} name="userName" onChange={handleChange}  type="text"  class="contact__input"></input>
-            <textarea placeholder="Describe your proposal" data-aos="fade-down" data-aos-delay="600" name="emailDetails" value={contact.emailDetails} onChange={handleChange} cols="0" rows="10" class="contact__input"></textarea>
+        <div className="contact__container bd-grid">
+          <form action="" className="contact__form">
+            <input placeholder="Email Address" data-aos="fade-down" data-aos-delay="200" label="Email Address" type="mail" value={contact.userEmail} name="userEmail" onChange={handleChange} className="contact__input"></input>
+            <input placeholder="Name" data-aos="fade-down" data-aos-delay="400" label="Name" value={contact.userName} name="userName" onChange={handleChange}  type="text"  className="contact__input"></input>
+            <textarea placeholder="Describe your proposal" data-aos="fade-down" data-aos-delay="600" name="emailDetails" value={contact.emailDetails} onChange={handleChange} cols="0" rows="10" className="contact__input"></textarea>
             <br />
-            <input type="submit" value="Send" class="contact__button button"/>
+            <input type="submit" onClick={() => {handleSubmit()}} value="Send" className="contact__button button"/>
           </form>
         </div>
       </section>

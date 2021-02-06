@@ -16,7 +16,7 @@ function App() {
   return (
     <>
     <Header/>
-    <main class="l-main">
+    <main className="l-main">
       <Home/>
       <About/>
       <Skills/>

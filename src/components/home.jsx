@@ -15,7 +15,7 @@ const Home = () => {
         <section className="home bd-grid" id="home">
             <div className="home__data">
                 <div data-aos="fade-down" data-aos-duration="duration: 2000">
-                    <h1 class="home__title">Hi,<br/>I'am <span className="home__title-color">Cristian</span><br/><Typed
+                    <h1 className="home__title">Hi,<br/>I'am <span className="home__title-color">Cristian</span><br/><Typed
                         className="typed-text"
                         strings={["Web Developer","Frontend Developer", 'Backend Developer']}
                         typeSpeed={40}

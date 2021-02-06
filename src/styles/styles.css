@@ -316,7 +316,7 @@ img{
   padding: .5rem 1rem;
   margin-bottom: var(--mb-4);
   border-radius: .5rem;
-  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+  box-shadow: 0 15px 15px rgba(29, 67, 89, 0.646);
 }
 .skills__icon{
   font-size: 1rem;
@@ -367,7 +367,7 @@ img{
   row-gap: 2rem;
 }
 .work__img{
-  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+  box-shadow: 0 1px 15px rgb(59, 110, 140);
   border-radius: .5rem;
   overflow: hidden;
 }
@@ -381,17 +381,15 @@ img{
 
 /* ===== CONTACT =====*/
 .contact__input{
+  box-shadow: 0 1px 10px rgb(59, 110, 140);
   width: 100%;
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 10px;
   background-color: var(--baseBackground);
   color: var(--fontColor);
-  border-top: 0 ;
-  border-left: 0 ;
-  border-right: 0;
-  border-bottom: 1.5px solid var(--fontColor);
+  border: 0;
   outline: none;
   margin-bottom: var(--mb-4);
 }
