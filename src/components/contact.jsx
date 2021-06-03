@@ -22,7 +22,7 @@ export const Contact = () => {
    };
    const handleSubmit = e =>{
     e.preventDefault();
-    		emailjs.send('default_service','template_portfolio', contact, 'user_qZigmbIXOBvY5baWxwy2K')
+    		emailjs.send('default_service','template_portfolio', contact, 'user_54nIdruhhcEcbAmaMYN0l')
 		.then((response) => {
 				   console.log('SUCCESS!', response.status, response.text);
 				   setContact(frmContact);
